@@ -11,7 +11,6 @@ import '@nomiclabs/hardhat-ethers'
 import '@layerzerolabs/toolbox-hardhat'
 import { HardhatUserConfig, HttpNetworkAccountsUserConfig } from 'hardhat/types'
 
-import { EndpointId } from '@layerzerolabs/lz-definitions'
 
 // Set your preferred authentication method
 //
@@ -53,18 +52,15 @@ const config: HardhatUserConfig = {
     },
     networks: {
         'sepolia-testnet': {
-            eid: EndpointId.SEPOLIA_V2_TESTNET,
-            url: process.env.RPC_URL_SEPOLIA || 'https://rpc.sepolia.org/',
+            url: 'https://rpc.sepolia.org/',
             accounts,
         },
         'avalanche-testnet': {
-            eid: EndpointId.AVALANCHE_V2_TESTNET,
-            url: process.env.RPC_URL_FUJI || 'https://rpc.ankr.com/avalanche_fuji',
+            url: 'https://rpc.ankr.com/avalanche_fuji',
             accounts,
         },
         'amoy-testnet': {
-            eid: EndpointId.AMOY_V2_TESTNET,
-            url: process.env.RPC_URL_AMOY || 'https://polygon-amoy-bor-rpc.publicnode.com',
+            url: 'https://polygon-amoy.drpc.org',
             accounts,
         },
         hardhat: {
