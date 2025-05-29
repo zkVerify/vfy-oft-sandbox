@@ -9,9 +9,5 @@ contract MyNativeOFTAdapterMock is MyNativeOFTAdapter {
         uint8 _localDecimals,
         address _lzEndpoint,
         address _delegate
-    ) MyNativeOFTAdapter(_localDecimals, _lzEndpoint, _delegate) {}
-
-    function removeDust(uint256 _amountLD) public view returns (uint256 amountLD) {
-        return _removeDust(_amountLD);
-    }
+    ) MyNativeOFTAdapter(_localDecimals, _lzEndpoint, _delegate, true) {}
 }
