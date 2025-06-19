@@ -30,7 +30,7 @@ async function runTests()  {
 
     // Fetching the native fee for the token send operation
     let [nativeFee] = await nativeOft.connect(signer).quoteSend(sendParam, false)
-    const msgValue = nativeFee.add(await nativeOft.removeDust(amountToSend))
+    const msgValue = nativeFee.add(amountToSend)
 
     // Executing the send operation from myNativeOFTAdapter contract
     let tx = await nativeOft
