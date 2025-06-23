@@ -1,6 +1,5 @@
 import { Options } from "@layerzerolabs/lz-v2-utilities";
 import { expect } from "chai";
-import { Contract, Transaction, Wallet } from "ethers";
 import hre from "hardhat";
 
 const wait = (ms: number) => new Promise(res => setTimeout(res, ms));

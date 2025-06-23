@@ -1,5 +1,4 @@
 import { Options } from "@layerzerolabs/lz-v2-utilities";
-import { BigNumber, Contract, Transaction, Wallet } from "ethers";
 import hre from "hardhat";
 import { expect } from 'chai'
 
@@ -20,7 +19,7 @@ async function runTests()  {
     const amountToSend = hre.ethers.utils.parseEther(process.env.TEST_VALUE)
     const signer = (await hre.ethers.getSigners())[0]
     
-    //get balance first
+    //get balance before
     const oftBalanceBefore = await getOftBalanceOnSecondNetwork(signer.address);
     console.log(`oft balance on second chain is ${oftBalanceBefore}`)
 
@@ -60,7 +59,7 @@ async function runTests()  {
     console.log(`waiting 2 minutes for LayerZero to complete the flow`)
     await wait(120000);
     
-    //get balance first
+    //get balance after
     const oftBalanceAfter = await getOftBalanceOnSecondNetwork(signer.address);
     console.log(`oft balance on second chain now is ${oftBalanceAfter}`)
 
