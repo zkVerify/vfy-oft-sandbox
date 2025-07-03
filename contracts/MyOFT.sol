@@ -5,7 +5,6 @@ import { Ownable } from "@openzeppelin/contracts/access/Ownable.sol";
 import { OFT } from "@layerzerolabs/oft-evm/contracts/OFT.sol";
 
 contract MyOFT is OFT {
-    bool private checkForSlippage;
 
     constructor(
         string memory _name,

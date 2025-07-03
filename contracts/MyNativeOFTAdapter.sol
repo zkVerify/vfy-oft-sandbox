@@ -13,7 +13,6 @@ import { NativeOFTAdapter } from "@layerzerolabs/oft-evm/contracts/NativeOFTAdap
  * @dev WARNING: The default NativeOFTAdapter implementation assumes LOSSLESS transfers, ie. 1 native in, 1 native out.
  */
 contract MyNativeOFTAdapter is NativeOFTAdapter {
-    bool private checkForSlippage;
 
     constructor(
         uint8 _localDecimals,
