@@ -10,7 +10,7 @@ async function deployAndSetup()  {
 
   //deploy on first
   const NativeOFTAdapter = await hre.ethers.getContractFactory("MyNativeOFTAdapter");
-  const nativeOft = await NativeOFTAdapter.deploy(18, process.env.FIRST_CHAIN_ENDPOINT, deployer.address, false)
+  const nativeOft = await NativeOFTAdapter.deploy(18, process.env.FIRST_CHAIN_ENDPOINT, deployer.address)
 
   console.log(`Deployed contract: "MyNativeOFTAdapter", network: ${hre.network.name}, address: ${nativeOft.address}`)
 
@@ -22,7 +22,7 @@ async function deployAndSetup()  {
   console.log(`Deployer: ${secondDeployer.address}`)
 
   const OFT = await hre.ethers.getContractFactory("MyOFT");
-  const oft = await OFT.connect(secondDeployer).deploy(process.env.OFT_NAME, process.env.OFT_SYMBOL, process.env.OTHER_CHAIN_ENDPOINT, secondDeployer.address, false);
+  const oft = await OFT.connect(secondDeployer).deploy(process.env.OFT_NAME, process.env.OFT_SYMBOL, process.env.OTHER_CHAIN_ENDPOINT, secondDeployer.address);
 
   console.log(`Deployed contract: "MyOFT", network: ${process.env.OTHER_CHAIN_RPC}, address: ${oft.address}`)
   
